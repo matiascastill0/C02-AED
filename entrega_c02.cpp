@@ -1,3 +1,8 @@
+// Integrantes:
+// 202120533 - Aldair Seminario Sanchez
+// 202210081 - Matias Castillo Quincho
+// 202220226 - Renzo Felix Aponte
+
 #include <iostream>
 
 using namespace std;
@@ -42,7 +47,7 @@ public:
     if (!head || k == 0)
       return head;
 
-    // Calcula la longitud de la lista
+
     int length = 1;
     ListNode *tail = head;
     while (tail->next) {
@@ -50,12 +55,10 @@ public:
       length++;
     }
 
-    // Conecta el final de la lista al principio para formar un ciclo
     tail->next = head;
     k = k % length;
     int stepsToNewHead = length - k;
 
-    // Encuentra el nuevo final y separa el ciclo
     ListNode *newTail = head;
     for (int i = 0; i < stepsToNewHead - 1; i++) {
       newTail = newTail->next;
